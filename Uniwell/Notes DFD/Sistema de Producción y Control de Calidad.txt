@@ -1,0 +1,84 @@
+
+Diagrama de Flujo de Datos (DFD) por Clases de Usuario - Sistema de Producción y Control de Calidad
+________________________________________
+
+Nivel 0 (Contexto):
+
+Entidad Externa:
+
+• Usuario Visualizador
+• Usuario Editor (Administrador)
+
+Proceso Principal:
+
+• Gestión de Producción y Calidad
+
+Almacenes de Datos:
+
+• Base de Datos del Sistema
+
+Flujos:
+
+• Usuario Visualizador -> Solicita información de productos, reportes y notificaciones
+• Usuario Editor -> Solicita y envía datos para editar registros
+________________________________________
+
+Nivel 1: Procesos Principales por Clase de Usuario
+
+1. Usuario Visualizador
+
+• Proceso 1.1: Consultar Productos
+	o Entrada: Solicitud de lista de productos
+	o Salida: Datos de Producto
+
+• Proceso 1.2: Visualizar Reportes Finales
+	o Entrada: Solicitud de reportes
+	o Salida: Datos de ReporteFinal
+
+• Proceso 1.3: Ver Notificaciones
+	o Entrada: Solicitud de mensajes
+	o Salida: Datos de Notificación
+
+Almacenes Relacionados:
+	• Producto
+	• ReporteFinal
+	• Notificación
+________________________________________
+
+2. Usuario Editor (Administrador)
+
+• Proceso 2.1: Iniciar Sesión / Registro
+	o Entrada: Credenciales / Datos de registro
+	o Salida: Acceso validado
+	o Almacén: Usuario
+
+• Proceso 2.2: Gestionar Productos
+	o Entrada: Datos de producto nuevos o modificados
+	o Salida: Confirmación de acción
+	o Almacén: Producto
+
+• Proceso 2.3: Registrar Producción y Calidad
+	o Entrada: Datos de OrdenProducción, RegistroCalidad, Defectos
+	o Salida: Datos almacenados o actualizados
+	o Almacenes: OrdenProducción, RegistroCalidad, Defecto
+
+• Proceso 2.4: Generar Reportes
+	o Entrada: Datos técnicos y de calidad
+	o Salida: Reporte y DetalleReporte
+	o Almacenes: Reporte, DetalleReporte
+
+• Proceso 2.5: Gestionar Notificaciones
+	o Entrada: Nuevos mensajes o avisos
+	o Salida: Notificación emitida
+	o Almacén: Notificación
+
+• Proceso 2.6: Emitir Reporte Final
+	o Entrada: Datos acumulados y validaciones
+	o Salida: ReporteFinal generado
+	o Almacén: ReporteFinal
+________________________________________
+
+Notas:
+	• El visualizador no interactúa con procesos de escritura, solo de lectura.
+	• El editor tiene control total de inserción, modificación y generación de datos.
+	• Todos los flujos deben validarse con autenticación previa en la interfaz.

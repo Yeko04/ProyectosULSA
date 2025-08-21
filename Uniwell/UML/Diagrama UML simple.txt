@@ -1,0 +1,57 @@
+@startuml UniwellApparel_ClassDiagram
+
+skinparam classAttributeIconSize 0
+
+class Usuario {
+  + id: int
+  + nombre: string
+  + rol: Enum (Inspector, Supervisor, Admin)
+  + email: string
+  --
+  + login()
+  + registrarInspeccion()
+}
+
+class Producto {
+  + codigo: string
+  + estilo: string
+  + color: string
+  + talla: string
+  + cantidad: int
+}
+
+class Inspeccion {
+  + id: int
+  + fecha: Date
+  + estado: Enum (Aprobado, Rechazado)
+  + comentarios: text
+  --
+  + registrarResultado()
+}
+
+class Reporte {
+  + id: int
+  + fechaGeneracion: Date
+  + tipo: Enum (Producción, Calidad)
+  --
+  + generarGrafica()
+  + exportarPDF()
+}
+
+Usuario "1" -- "n" Inspeccion : Realiza >
+Producto "1" -- "n" Inspeccion : Incluye >
+Inspeccion "n" -- "1" Reporte : Genera >
+
+note top of Usuario
+  **Roles**:
+  - Inspector: Solo registro
+  - Supervisor: Consulta/reportes
+  - Admin: Gestión completa
+end note
+
+note right of Producto
+  Datos maestros de producción
+  Validación por código único
+end note
+
+@enduml

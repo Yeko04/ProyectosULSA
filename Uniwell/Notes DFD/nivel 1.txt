@@ -1,0 +1,26 @@
+Nivel 1 - Procesos del Usuario Visualizador
+
+| Proceso             | Entrada                | Salida                  | Almacén de datos relacionado |
+| ------------------- | ---------------------- | ----------------------- | ---------------------------- |
+| Consultar Productos | Solicitud de productos | Lista de productos      | Producto                     |
+| Visualizar Reportes | Solicitud de reportes  | Reportes finales        | ReporteFinal                 |
+| Ver Notificaciones  | Solicitud de mensajes  | Lista de notificaciones | Notificación                 |
+
+
+Nivel 1 - Procesos del Usuario Editor (Administrador)
+
+| Proceso                      | Entrada                              | Salida                     | Almacén de datos relacionado              |
+| ---------------------------- | ------------------------------------ | -------------------------- | ----------------------------------------- |
+| Iniciar Sesión / Registro    | Datos de inicio de sesión / registro | Acceso autorizado          | Usuario                                   |
+| Gestionar Productos          | Nuevos datos o cambios               | Producto creado/modificado | Producto                                  |
+| Registrar Producción/Calidad | Datos de producción y defectos       | Registros almacenados      | OrdenProducción, RegistroCalidad, Defecto |
+| Generar Reportes             | Datos técnicos                       | Reporte y DetalleReporte   | Reporte, DetalleReporte                   |
+| Gestionar Notificaciones     | Contenido del mensaje                | Notificación enviada       | Notificación                              |
+| Emitir Reporte Final         | Información acumulada                | Reporte final              | ReporteFinal                              |
+
+
+El visualizador solo tiene permiso de lectura, no puede registrarse ni editar.
+
+El editor tiene acceso completo: puede registrar, modificar, generar reportes y notificaciones.
+
+Todo acceso debe estar validado con autenticación previa.
