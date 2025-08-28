@@ -29,18 +29,13 @@
                         <table class="w-full text-xs text-[#525252] font-semibold">
                             <thead>
                                 <tr class="border-b border-[#525252]">
-                                    {% if registros and registros[0] %}
-                                        {% for columna in registros[0].keys() %}
-                                            <th>{{ columna }}</th>
-                                        {% endfor %}
-                                    {% else %}
                                         <th>ID</th>
                                         <th>Nombre</th>
-                                        <th>Usuario</th>
+                                        <th>Tipo</th>
+                                        <th>Tamaño</th>
                                         <th>Acción</th>
-                                        <th>Dirección</th>
                                         <th>Fecha</th>
-                                    {% endif %}
+                                        <th>Dirección</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -32,20 +32,18 @@
                     <p class="text-xs text-[#525252] mb-4 leading-tight">
                         Escribir la ruta de carpetas o archivos a respaldar manualmente. El <br>respaldo se guardará en la carpeta " /backups/ " con la fecha actual.</br>
                     </p>
-                    
-                    <section>
-                        <form action="/procesar" method="POST" enctype="multipart/form-data">
-                            <div class="form-group relative mb-8">
-                                <label for="direccion" class="font-semibold cursor-pointer text-xs text-[#000000] mb-3">Dirección:</label>
-                                <input class="input-field text-[#595959]" type="text" id="direccion" name="direccion" placeholder="Ingrese la dirección" required/>
-                            </div>
-                            <div class="flex justify-center mt-3">
+                        <section>
+                            <form action="/procesar" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="archivo" class="font-semibold cursor-pointer text-xs text-[#000000] mb-3">Selecciona un archivo para respaldar:</label>
+                                    <input class="input-field text-[#595959]" type="file" id="archivo" name="archivo" required>
+                                </div>
+                                <div class="flex justify-center mt-3">
                                 <button type="submit" class="primary-button">
                                     Iniciar
                                 </button>
-                            </div>
-                        </form>
-                    </section>
+                            </form>
+                        </section>
                 </div>
             </div>
         </div>

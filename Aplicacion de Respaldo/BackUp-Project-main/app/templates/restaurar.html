@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Restaurar - Aplicación YekoBackup</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-[#1E90FF] min-h-screen flex items-center justify-center p-4">
@@ -32,15 +32,19 @@
                     <p class="text-xs text-[#525252] mb-3 leading-tight">
                         Elige un respaldo y selecciona qué archivo o carpeta deseas restaurar.
                     </p>
-                    <div class="relative mb-6">
-                        <input id="fechaRespaldo" type="date" class="input-field mb-4 text-[#7A7A7A]"/>
-                        <input id="ruta2" type="file" class="input-field text-[#7A7A7A]"/>
-                    </div>
-                    <div class="flex justify-center mt-3">
-                     <button type="submit" class="primary-button">
-                        Restaurar
-                    </button>
-                    </div>
+                    <section>
+                        <form action="/ProcesarRecover" method="POST" enctype="multipart/form-data">
+                            <div class="form-group relative mb-8">
+                                <label for="nombre" class="font-semibold cursor-pointer text-xs text-[#000000] mb-3">Nombre:</label>
+                                <input class="input-field text-[##595959]" type="text" id="nombre" name="nombre"  placeholder="Archivo que quiere recuperar" required>
+                            </div>
+                            <div class="form-actions flex justify-center mt-3">
+                            <button type="submit" class="primary-button">
+                                Restaurar
+                            </button>
+                            </div>
+                        </form>
+                    </section>
                 </div>
             </div>
         </div>
