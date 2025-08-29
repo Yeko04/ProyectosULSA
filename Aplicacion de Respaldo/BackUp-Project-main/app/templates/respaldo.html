@@ -36,11 +36,11 @@
                             <form action="/procesar" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="archivo" class="font-semibold cursor-pointer text-xs text-[#000000] mb-3">Selecciona un archivo para respaldar:</label>
-                                    <input class="input-field text-[#595959]" type="file" id="archivo" name="archivo" required>
+                                    <input type="file" name="archivo" webkitdirectory directory multiple>
                                 </div>
                                 <div class="flex justify-center mt-3">
                                 <button type="submit" class="primary-button">
-                                    Iniciar
+                                    Respaldar
                                 </button>
                             </form>
                         </section>
